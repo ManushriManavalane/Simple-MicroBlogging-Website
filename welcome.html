@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('welcome page.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        h1 {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 50px;
+            color: rgb(71, 17, 17);  
+        }
+        
+        form {
+            background: rgba(255, 244, 194, 0.8);  
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        label, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #fda219; 
+            color: rgb(192, 136, 136);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Manu's Micro Blogging Space</h1>
+    <form action="blogger page.html">
+        <label for="Username">User name:</label>
+        <input type="text" id="Username" name="Username"><br>
+        <label for="Password">Password:</label>
+        <input type="password" id="Password" name="Password"><br><br>
+        <input type="submit" value="Get In">
+    </form>
+</body>
+</html>

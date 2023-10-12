@@ -1,0 +1,104 @@
+<html>
+    <style>
+        body {
+            background-image: url('blogging page.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 50px;
+            color: rgb(71, 17, 17);  
+        }
+        form {
+            background: rgba(255, 134, 194, 0.8);  
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        label, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #bf97ff; 
+            color: rgb(192, 136, 136);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #newTask {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        #newTask:focus {
+            outline: none;
+            border-color: #007BFF;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #d391ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #8a258d;
+        }
+    </style>
+<body>
+  <h1>Add a Blog</h1>
+   <!-- <form  method="post">  -->
+   
+    <input type="text" id="newTask" placeholder="Write your Blog">
+    <button onclick="addTask()">Add your Blog</button>
+    
+    <ul id="taskList">
+    </ul>
+ 
+    <script>
+        function addTask() {
+            var taskInput = document.getElementById("newTask");
+            var taskText = taskInput.value.trim();
+            
+            if (taskText !== "") {
+                var taskList = document.getElementById("taskList");
+                var newTask = document.createElement("p");
+                newTask.innerHTML = `${taskText} <button onclick="removeTask(this)"> Delete </button>`;
+                taskList.appendChild(newTask);
+                taskInput.value = "";
+            }
+        }
+
+        function removeTask(button) {
+            var taskToRemove = button.parentElement;
+            taskToRemove.remove();
+        }
+    </script>
+
+   
+    <!-- Title: <input type="text" name="title"><br>
+    Content: <textarea name="content"></textarea><br>
+    <input type="submit" value="Submit">    -->
+ 
+
+<!--</form>-->
+</body>
+</html>
